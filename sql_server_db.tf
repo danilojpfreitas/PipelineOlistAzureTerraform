@@ -1,4 +1,4 @@
-resource "azurerm_sql_server" "olist" {
+resource "azurerm_mssql_server" "olist" {
   name                         = "olist-sql-server-danilofreitas"
   resource_group_name          = azurerm_resource_group.olist.name
   location                     = azurerm_resource_group.olist.location
@@ -7,7 +7,7 @@ resource "azurerm_sql_server" "olist" {
   administrator_login_password = var.db_password
 
   tags = {
-    environment = "dev"
+    environment = var.environment
   }
 }
 
@@ -15,12 +15,12 @@ resource "azurerm_sql_database" "olist" {
   name                = "olist_db"
   resource_group_name = azurerm_resource_group.olist.name
   location            = azurerm_resource_group.olist.location
-  server_name         = azurerm_sql_server.olist.name
+  server_name         = azurerm_mssql_server.olist.name
 
   zone_redundant = false
   requested_service_objective_name = "Basic"
 
   tags = {
-    environment = "dev"
+    environment = var.environment
   }
 }
