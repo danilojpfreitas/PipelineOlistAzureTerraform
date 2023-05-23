@@ -17,5 +17,10 @@ resource "azurerm_storage_data_lake_gen2_filesystem" "olist" {
   count = length(var.containers_name)
   name               = var.containers_name[count.index]
   storage_account_id = azurerm_storage_account.olist.id
+
+  ace {
+    type = "other"
+    permissions = "rwx"
+  }
 }
 
