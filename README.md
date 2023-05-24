@@ -8,7 +8,7 @@ Neste projeto foi criado recursos de um Data Pipeline com Azure utilizando infra
 
 A Pipeline é composta pela seguinte arquitetura:
 
-![Data Pipeline Azure Terraform](Docs/Data-Pipeline-Azure-Terraform.png)
+![Data Pipeline Azure Terraform](Docs/Data-Pipeline-Azure-Terraform-2.png)
 
 ### Visão geral da arquitetura
 
