@@ -1,8 +1,8 @@
 resource "azurerm_databricks_workspace" "olist" {
   name                = "olist_databricks"
   resource_group_name = azurerm_resource_group.olist.name
-  #Price is better in Central US
-  location            = "Central US"
+  #Price is better in Central US but no work
+  location            = "Brazil South"
   sku                 = "standard"
 
   tags = {

@@ -24,3 +24,12 @@ resource "azurerm_sql_database" "olist" {
     environment = var.environment
   }
 }
+
+resource "azurerm_sql_firewall_rule" "olist" {
+  count = length(var.firewall)
+  name                = "FirewallRule-${var.firewall[count.index]}"
+  resource_group_name = azurerm_resource_group.olist.name
+  server_name         = azurerm_mssql_server.olist.name
+  start_ip_address    = "${var.firewall[count.index]}.0"
+  end_ip_address      = "${var.firewall[count.index]}.255"
+}
