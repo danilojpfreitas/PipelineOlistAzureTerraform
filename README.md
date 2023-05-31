@@ -1,7 +1,5 @@
 # Data Pipeline completa na Azure com Terraform
 
-### Projeto desenvolvido e discultido no meu blog: 
-
 ---
 
 Neste projeto foi criado recursos de um Data Pipeline com Azure utilizando infraestrutura como código com o Terraform. 
